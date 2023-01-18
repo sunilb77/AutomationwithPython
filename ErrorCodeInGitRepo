@@ -1,0 +1,11 @@
+import subprocess
+
+# Define the path to the Git repository
+repo_path = '/path/to/your/git/repo'
+
+# Run the Git command to find all commits with the word "error" in the commit message
+proc = subprocess.Popen(['git', 'log', '--all', '--grep=error'], cwd=repo_path, stdout=subprocess.PIPE)
+output, _ = proc.communicate()
+
+# Print the output of the Git command
+print(output.decode())
