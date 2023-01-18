@@ -1,0 +1,9 @@
+import boto3
+
+# Connect to EC2
+ec2 = boto3.client('ec2')
+
+# Restart the instance
+response = ec2.reboot_instances(InstanceIds=['INSTANCE_ID'])
+
+print(response)
